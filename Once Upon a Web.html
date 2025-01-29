@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whiskers' Adventure</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #ffe6f2;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+        }
+        .book {
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            background: #fff0f5;
+            border: 10px solid #ff99cc;
+            border-radius: 15px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .page {
+            display: none;
+            padding: 20px;
+        }
+        .page img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        button {
+            background-color: #ff99cc;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #ff66b2;
+        }
+    </style>
+</head>
+<body>
+    <div class="book">
+        <div class="page" id="page1">
+            <h1>Whiskers' Night Out</h1>
+            <img src="images/whiskers_intro.jpg" alt="Whiskers the cat">
+            <p>Whiskers was no ordinary cat. He dreamed of adventure beyond his cozy home.</p>
+            <button onclick="nextPage(2)">Next</button>
+        </div>
+        <div class="page" id="page2">
+            <h2>The Great Escape</h2>
+            <img src="images/whiskers_escape.jpg" alt="Whiskers sneaking out">
+            <p>One evening, curiosity got the best of him. He sneaked out into the bustling city.</p>
+            <button onclick="prevPage(1)">Back</button>
+            <button onclick="nextPage(3)">Next</button>
+        </div>
+        <div class="page" id="page3">
+            <h2>Lost in the City</h2>
+            <img src="images/whiskers_lost.jpg" alt="Whiskers lost in the city">
+            <p>As he wandered, the streets became unfamiliar. Whiskers was lost.</p>
+            <button onclick="prevPage(2)">Back</button>
+            <button onclick="nextPage(4)">Next</button>
+        </div>
+        <div class="page" id="page4">
+            <h2>Finding the Way Home</h2>
+            <img src="images/whiskers_clue.jpg" alt="Whiskers finding a clue">
+            <p>Whiskers used his senses to find familiar scents and clues leading home.</p>
+            <button onclick="prevPage(3)">Back</button>
+            <button onclick="nextPage(5)">Next</button>
+        </div>
+        <div class="page" id="page5">
+            <h2>Home Sweet Home</h2>
+            <img src="images/whiskers_home.jpg" alt="Whiskers back home">
+            <p>After a long journey, Whiskers finally made it home, realizing that adventure is fun, but home is where he belongs.</p>
+            <button onclick="prevPage(4)">Back</button>
+        </div>
+    </div>
+    
+    <script>
+        function nextPage(pageNumber) {
+            document.querySelectorAll('.page').forEach(page => page.style.display = 'none');
+            document.getElementById('page' + pageNumber).style.display = 'block';
+        }
+        function prevPage(pageNumber) {
+            document.querySelectorAll('.page').forEach(page => page.style.display = 'none');
+            document.getElementById('page' + pageNumber).style.display = 'block';
+        }
+        nextPage(1);
+    </script>
+</body>
+</html>
